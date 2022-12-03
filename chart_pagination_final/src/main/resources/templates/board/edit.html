@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>차트 수정</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css" />
+</head>
+<body>
+<header th:insert="common/header.html"></header>
+<div class="container">
+  <form th:action="@{'/post/edit/' + ${post.id}}" method="post">
+    <input type="hidden" name="_method" value="put" />
+    <input type="hidden" name="id" th:value="${post.id}" />
+    <div class="form-group row">
+      <label for="inputPatientName" class="col-sm-2 col-form-label"><strong>환자명</strong></label>
+      <div class="col-sm-10">
+        <input
+                type="text"
+                name="patientName"
+                class="form-control"
+                id="inputPatientName"
+                th:value="${post.patientName}"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPatientAge" class="col-sm-2 col-form-label"><strong>환자나이</strong></label>
+      <div class="col-sm-10">
+        <input
+                type="text"
+                name="patientAge"
+                class="form-control"
+                id="inputPatientAge"
+                th:value="${post.patientAge}"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputDiagnosis" class="col-sm-2 col-form-label"><strong>진단명</strong></label>
+      <div class="col-sm-10">
+        <input
+                type="text"
+                name="diagnosis"
+                class="form-control"
+                id="inputDiagnosis"
+                th:value="${post.diagnosis}"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputNurseName" class="col-sm-2 col-form-label"><strong>담당간호사</strong></label>
+      <div class="col-sm-10">
+        <input
+                type="text"
+                name="nurseName"
+                class="form-control"
+                id="inputNurseName"
+                th:value="${post.nurseName}"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputDoctorName" class="col-sm-2 col-form-label"><strong>담당의사</strong></label>
+      <div class="col-sm-10">
+        <input
+                type="text"
+                name="doctorName"
+                class="form-control"
+                id="inputDoctorName"
+                th:value="${post.doctorName}"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputNursingNote" class="col-sm-2 col-form-label"><strong>간호일지</strong></label>
+      <div class="col-sm-500">
+            <textarea
+                    type="text"
+                    name="nursingNote"
+                    class="form-control"
+                    id="inputNursingNote"
+                    th:value="${post.nursingNote}"
+            ></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputViewingNote" class="col-sm-2 col-form-label"><strong>관찰일지</strong></label>
+      <div class="col-sm-500">
+            <textarea
+                    type="text"
+                    name="viewingNote"
+                    class="form-control"
+                    id="inputViewingNote"
+                    th:value="${post.viewingNote}"
+            ></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputLAB" class="col-sm-2 col-form-label"><strong>LAB검사결과</strong></label>
+      <div class="col-sm-500">
+            <textarea
+                    type="text"
+                    name="LAB"
+                    class="form-control"
+                    id="inputLAB"
+                    th:value="${post.LAB}"
+            ></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto mr-auto"></div>
+      <div class="col-auto">
+        <input class="btn btn-primary" type="submit" role="button" value="수정" />
+      </div>
+    </div>
+  </form>
+</div>
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
